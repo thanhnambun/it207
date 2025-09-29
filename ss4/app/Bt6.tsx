@@ -9,42 +9,35 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-// Định nghĩa type Todo với id và title
 type Todo = {
   id: number;
   title: string;
 };
 
-export const Bt6 = () => {
-  // State để lưu danh sách todos
+export default function Bt6 () {
   const [todos, setTodos] = useState<Todo[]>([]);
 
-  // State để lưu todo đang nhập
   const [todo, setTodo] = useState<Todo>({
     id: 0,
     title: "",
   });
 
-  // Hàm thêm todo mới vào danh sách
+
   const handleAddTodo = () => {
     if (todo.title.trim() !== "") {
-      // Tạo todo mới với id duy nhất (timestamp)
       const newTodo = {
         ...todo,
         id: Date.now(),
       };
       setTodos([...todos, newTodo]);
-      // Reset input sau khi thêm
       setTodo({ id: 0, title: "" });
     }
   };
 
-  // Hàm xóa todo khỏi danh sách
   const handleDeleteTodo = (id: number) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
-  // Component hiển thị từng todo item
   const renderTodoItem = ({ item }: { item: Todo }) => (
     <View style={styles.todoItem}>
       <Text style={styles.todoText}>{item.title}</Text>
@@ -61,7 +54,6 @@ export const Bt6 = () => {
     <View style={styles.container}>
       <Text style={styles.title}>Todo List</Text>
 
-      {/* Input để nhập todo mới */}
       <TextInput
         style={styles.input}
         placeholder="Nhập todo mới..."
@@ -69,10 +61,8 @@ export const Bt6 = () => {
         onChangeText={(text) => setTodo({ ...todo, title: text })}
       />
 
-      {/* Button thêm todo */}
       <Button title="Thêm Todo" onPress={handleAddTodo} />
 
-      {/* Hiển thị danh sách todos */}
       <FlatList
         data={todos}
         renderItem={renderTodoItem}
@@ -83,7 +73,6 @@ export const Bt6 = () => {
   );
 };
 
-// Styles cho component
 const styles = StyleSheet.create({
   container: {
     flex: 1,

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { View, Text, StyleSheet, Alert } from "react-native";
-import { CurrencyInput } from "../components/CurrencyInput";
+import  CurrencyInput  from "../components/CurrencyInput";
 
-export const Bt5 = () => {
+export default function Bt5  () {
   const [vndValue, setVndValue] = useState<string>("");
   const [usdValue, setUsdValue] = useState<string>("");
 

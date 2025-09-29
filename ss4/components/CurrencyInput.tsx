@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Text, TextInput, StyleSheet } from "react-native";
 
-// Định nghĩa interface cho CurrencyInput props
 export interface CurrencyInputProps {
   currency: "VND" | "USD";
   value: string;
@@ -9,13 +8,13 @@ export interface CurrencyInputProps {
   placeholder: string;
 }
 
-// Component CurrencyInput - nhận props từ component cha
-export const CurrencyInput: React.FC<CurrencyInputProps> = ({
+
+export default function CurrencyInput  ({
   currency,
   value,
   onValueChange,
   placeholder,
-}) => {
+}: CurrencyInputProps) {
   return (
     <View style={styles.inputContainer}>
       <Text style={styles.currencyLabel}>{currency}</Text>
@@ -31,7 +30,6 @@ export const CurrencyInput: React.FC<CurrencyInputProps> = ({
   );
 };
 
-// Styles cho CurrencyInput component
 const styles = StyleSheet.create({
   inputContainer: {
     marginBottom: 20,

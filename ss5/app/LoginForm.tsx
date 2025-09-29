@@ -8,15 +8,12 @@ import {
   View,
 } from "react-native";
 
-export default function Bai4() {
-  const [email, setEmail] = useState("");
+export default function LoginForm() {
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
-    Alert.alert(
-      "Thông tin đăng nhập",
-      `Email: ${email}\nMật khẩu: ${password}`
-    );
+    Alert.alert("Thông tin đăng nhập", `Tên đăng nhập: ${username}\nMật khẩu: ${password}`);
   };
 
   return (
@@ -25,10 +22,9 @@ export default function Bai4() {
 
       <TextInput
         style={styles.input}
-        placeholder="Email"
-        keyboardType="email-address"
-        value={email}
-        onChangeText={setEmail}
+        placeholder="Tên đăng nhập"
+        value={username}
+        onChangeText={setUsername}
       />
 
       <TextInput
@@ -53,7 +49,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     backgroundColor: "#f9f9f9",
     padding: 20,
-    paddingVertical: 30,
+    paddingVertical: 30
   },
   title: {
     fontSize: 22,

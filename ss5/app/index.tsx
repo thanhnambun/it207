@@ -1,22 +1,25 @@
 import { ScrollView, StyleSheet, Text } from "react-native";
 import Bt1 from "./Bt1";
-import Bt2 from "./Bt2";
 import Bt3 from "./Bt3";
-import Bt6 from "./Bt6";
-import Bt7 from "./Bt7";
-import Bt5 from "./Bt5";
-import ShopScreen from "./bt8/ShopScreen";
+import LikeButton from "./LikeButton";
+import LoginForm from "./LoginForm";
+import TodoList from "./TodoList";
+import Calculator from "./b8/Calculator";
+import ColorPicker from "./b10/ColorPicker";
+import TrafficLight from "./TrafficLight";
+
 export default function Index() {
   return (
     <>
       <ScrollView style={styles.container}>
         <Bt1 />
-        <Bt2 />
         <Bt3 />
-        <Bt6 />
-        <Bt7 />
-        <Bt5 />
-        <ShopScreen />
+        <LikeButton></LikeButton>
+        <LoginForm />
+        <TodoList />
+        <Calculator />
+        <TrafficLight />
+        <ColorPicker />
       </ScrollView>
     </>
   );

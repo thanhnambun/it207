@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Bai1 from './Bai1'
 import Bai2 from './Bai2'
 import { ScrollView, StyleSheet, Text } from 'react-native'
