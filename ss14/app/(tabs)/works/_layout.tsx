@@ -6,7 +6,20 @@ import FontAwesome6 from "@expo/vector-icons/FontAwesome6";
 export default function WorkLayout() {
   return (
     <Stack>
-      <Stack.Screen name="index" options={{ title: "Vị trí" }} />
+      <Stack.Screen
+        name="index"
+        options={{
+          title: "Vị trí",
+          headerRight: () => (
+            <TouchableOpacity
+              style={styles.btnAdd}
+              onPress={() => router.push("/(tabs)/works/add")}
+            >
+              <FontAwesome6 name="add" size={20} color="white" />
+            </TouchableOpacity>
+          ),
+        }}
+      />
       <Stack.Screen name="add" options={{ title: "Thêm vị trí mới" }} />
       <Stack.Screen name="edit" options={{ title: "Chỉnh sửa vị trí" }} />
       <Stack.Screen name="[id]" options={{ title: "Chi tiết vị trí" }} />
