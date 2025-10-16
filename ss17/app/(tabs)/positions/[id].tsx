@@ -1,24 +1,46 @@
-import { getPosition } from "@/apis/position.apis";
-import { AppDispatch, RootState } from "../../../../../ss17/redux/store";
+import { usePositionDetails } from "@/hooks/usePosition";
 import { useLocalSearchParams } from "expo-router";
-import React, { useEffect } from "react";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import {
+  ActivityIndicator,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 
 export default function PositionDetailScreen() {
   const { id } = useLocalSearchParams<{ id: string }>();
-  const dispatch = useDispatch<AppDispatch>();
-
   const positionId = Number(id);
-  const position = useSelector((state: RootState) => state.position.selected);
 
-  useEffect(() => {
-    dispatch(getPosition(positionId));
-  }, [positionId, dispatch]);
+  const {
+    data: position,
+    isLoading,
+    isError,
+    error,
+  } = usePositionDetails(positionId);
+
+  if (isLoading)
+    return (
+      <ActivityIndicator
+        style={{ marginTop: 50 }}
+        size="large"
+        color="#3182CE"
+      />
+    );
+
+  if (isError)
+    return (
+      <Text style={styles.errorText}>
+        Lỗi tải dữ liệu: {(error as Error).message}
+      </Text>
+    );
 
   if (!position)
     return <Text style={styles.errorText}>Không tìm thấy vị trí.</Text>;
+
   const isActive = position.positionStatus === "ACTIVE";
+
   return (
     <ScrollView style={styles.container}>
       <View style={styles.card}>
@@ -54,6 +76,5 @@ const styles = StyleSheet.create({
   valueName: { fontSize: 28, fontWeight: "bold", color: "#2D3748" },
   valueDescription: { fontSize: 16, color: "#4A5568", lineHeight: 24 },
   valueStatus: { fontSize: 20, fontWeight: "bold" },
-  valueDate: { fontSize: 16, fontStyle: "italic", color: "#718096" },
   errorText: { textAlign: "center", marginTop: 50, fontSize: 18, color: "red" },
 });

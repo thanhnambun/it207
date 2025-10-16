@@ -1,5 +1,5 @@
-import { toggleViewMode } from "@/redux/slice/view-mode.slice";
-import { RootState } from "@/redux/store";
+import { toggleViewMode } from "../../ss17/redux/slice/view-mode.slice";
+import { RootState } from "../../ss17/redux/store";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import GridView from "./GridView";

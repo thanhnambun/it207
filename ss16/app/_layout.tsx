@@ -1,4 +1,4 @@
-import store from "@/redux/store";
+import store from "../../ss17/redux/store";
 import { Stack } from "expo-router";
 import React from "react";
 import { Provider } from "react-redux";

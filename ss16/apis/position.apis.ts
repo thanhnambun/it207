@@ -1,5 +1,5 @@
 import { Position, PositionRequest } from "@/interfaces/position.interface";
-import { RootState } from "@/redux/store";
+import { RootState } from "../../ss17/redux/store";
 import { axiosInstance } from "@/utils/axios-instance";
 import { BaseResponse, SingleResponse } from "@/utils/response-data";
 import { createAsyncThunk } from "@reduxjs/toolkit";

@@ -1,5 +1,5 @@
 import AccountItem from "@/components/AccountItem";
-import { RootState } from "@/redux/store";
+import { RootState } from "../../../ss17/redux/store";
 import React from "react";
 import { FlatList, StyleSheet, Text, View } from "react-native";
 import { useSelector } from "react-redux";

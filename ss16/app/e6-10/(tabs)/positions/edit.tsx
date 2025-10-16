@@ -1,6 +1,6 @@
 import { getPosition, updatePosition } from "@/apis/position.apis";
 import PositionForm from "@/components/PositionForm";
-import { AppDispatch, RootState } from "@/redux/store";
+import { AppDispatch, RootState } from "../../../../../ss17/redux/store";
 import { router, useLocalSearchParams } from "expo-router";
 import React, { useEffect } from "react";
 import { ScrollView, StyleSheet, Text } from "react-native";

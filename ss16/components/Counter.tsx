@@ -1,5 +1,9 @@
-import { decrease, increase, reset } from "@/redux/slice/counter.slice";
-import { RootState } from "@/redux/store";
+import {
+  decrease,
+  increase,
+  reset,
+} from "../../ss17/redux/slice/counter.slice";
+import { RootState } from "../../ss17/redux/store";
 import React from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";

@@ -1,5 +1,8 @@
-import { addRandomNumber, randomReset } from "@/redux/slice/random.slice";
-import { RootState } from "@/redux/store";
+import {
+  addRandomNumber,
+  randomReset,
+} from "../../../ss17/redux/slice/random.slice";
+import { RootState } from "../../../ss17/redux/store";
 import React from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";

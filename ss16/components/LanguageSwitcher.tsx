@@ -1,5 +1,5 @@
-import { toggleLanguage } from "@/redux/slice/language.slice";
-import { RootState } from "@/redux/store";
+import { toggleLanguage } from "../../ss17/redux/slice/language.slice";
+import { RootState } from "../../ss17/redux/store";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { useDispatch, useSelector } from "react-redux";

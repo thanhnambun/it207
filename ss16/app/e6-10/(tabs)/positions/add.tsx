@@ -1,7 +1,7 @@
 import { createPosition } from "@/apis/position.apis";
 import PositionForm from "@/components/PositionForm";
 import { PositionRequest } from "@/interfaces/position.interface";
-import { AppDispatch } from "@/redux/store";
+import { AppDispatch } from "../../../../../ss17/redux/store";
 import { router } from "expo-router";
 import React from "react";
 import { ScrollView, StyleSheet } from "react-native";

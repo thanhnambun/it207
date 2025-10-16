@@ -1,4 +1,4 @@
-import { Account, toggleFavorite } from "@/redux/slice/account.slice";
+import { Account, toggleFavorite } from "../../ss17/redux/slice/account.slice";
 import { FontAwesome } from "@expo/vector-icons";
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
